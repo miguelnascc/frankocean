@@ -1,0 +1,869 @@
+
+/* =========================================
+   CORES DO LOVE JOURNEY
+========================================= */
+
+:root {
+    --rosa: #D93B6E;
+    --vinho: #5B1B4A;
+    --verde: #3B7B6B;
+    --claro: #F9E6E9;
+    --coral: #F5888E;
+    --amarelo: #FFDD98;
+    --verde-claro: #5BA77A;
+    --branco: #FFFFFF;
+    --texto: #5B1B4A;
+    --texto-suave: #856377;
+}
+
+
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    color: var(--texto);
+    background: var(--vinho);
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================
+   ESTRUTURA PRINCIPAL
+========================================= */
+
+.aplicativo {
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+
+    /* 
+       FUNDO PRINCIPAL DO SITE
+       Troque "fundo.png" pelo nome da sua imagem
+       caso o arquivo tenha outro nome.
+    */
+    background-image:
+        linear-gradient(
+            rgba(91, 27, 74, 0.18),
+            rgba(91, 27, 74, 0.18)
+        ),
+        url("/Love_Journey/img/fundo.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+/* =========================================
+   MENU LATERAL
+========================================= */
+
+.menu-lateral {
+    width: 218px;
+    min-height: 100vh;
+    flex: 0 0 218px;
+
+    background: var(--claro);
+
+    padding: 28px 18px 22px;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   LOGO / NOME LOVE JOURNEY
+========================================= */
+
+.marca {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--rosa);
+
+    font-size: 16px;
+    font-weight: 800;
+
+    margin-bottom: 38px;
+}
+
+.marca img {
+    width: 29px;
+    height: 29px;
+
+    object-fit: contain;
+    display: block;
+}
+
+
+/* =========================================
+   LINKS DO MENU
+========================================= */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 9px 10px;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    color: var(--vinho);
+
+    transition: 0.2s ease;
+}
+
+.menu a:hover {
+    background: #f4d1dc;
+}
+
+
+/* LINK ATIVO */
+
+.menu a.ativo {
+    color: white;
+
+    background: var(--rosa);
+
+    box-shadow: 0 5px 13px rgba(217, 59, 110, 0.25);
+}
+
+
+/* ÍCONES */
+
+.icone {
+    width: 14px;
+
+    text-align: center;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   MENSAGEM NO FINAL DO MENU
+========================================= */
+
+.mensagem-menu {
+    margin-top: auto;
+
+    background: #f7abc2;
+
+    border-radius: 14px;
+
+    padding: 17px 12px;
+
+    text-align: center;
+
+    font-size: 9px;
+
+    line-height: 1.45;
+}
+
+.mensagem-menu strong {
+    color: var(--rosa);
+
+    display: block;
+
+    margin-bottom: 6px;
+}
+
+.mensagem-menu p {
+    color: var(--vinho);
+}
+
+
+/* =========================================
+   CONTEÚDO PRINCIPAL
+========================================= */
+
+.conteudo-principal {
+    width: min(1100px, calc(100% - 218px));
+
+    min-height: 100vh;
+
+    padding: 30px 40px 34px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.cabecalho-pagina {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    margin-bottom: 19px;
+}
+
+.cabecalho-pagina h1 {
+    color: var(--branco);
+
+    font-size: 27px;
+
+    line-height: 1;
+
+    margin-bottom: 5px;
+
+    text-shadow: 0 2px 9px rgba(91, 27, 74, 0.25);
+}
+
+.cabecalho-pagina p {
+    color: #fff5f7;
+
+    font-size: 10px;
+
+    max-width: 570px;
+}
+
+
+/* BOTÃO NOVO CONTATO */
+
+.novo-contato {
+    background: var(--rosa);
+
+    color: white;
+
+    border-radius: 7px;
+
+    padding: 8px 13px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    box-shadow: 0 5px 13px rgba(91, 27, 74, 0.2);
+}
+
+
+/* =========================================
+   GRADE SUPERIOR
+========================================= */
+
+.grade-superior {
+    display: grid;
+
+    grid-template-columns:
+        2.05fr
+        1.05fr
+        1.05fr;
+
+    gap: 13px;
+}
+
+
+/* =========================================
+   PAINÉIS
+========================================= */
+
+.painel {
+    background: rgba(255, 255, 255, 0.96);
+
+    border-radius: 9px;
+
+    padding: 14px;
+
+    box-shadow: 0 7px 22px rgba(91, 27, 74, 0.13);
+}
+
+
+/* TÍTULO DOS PAINÉIS */
+
+.titulo-painel {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 12px;
+}
+
+.painel h2 {
+    color: var(--vinho);
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+.painel p {
+    color: var(--texto-suave);
+
+    font-size: 8px;
+
+    line-height: 1.4;
+
+    margin-top: 4px;
+}
+
+
+/* BOTÃO PEQUENO */
+
+.botao-pequeno {
+    color: var(--rosa);
+
+    background: #fde8ee;
+
+    padding: 4px 7px;
+
+    border-radius: 7px;
+
+    font-size: 7px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   MENTORES
+========================================= */
+
+.grade-mentores {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 7px;
+
+    margin-top: 10px;
+}
+
+.cartao-mentor {
+    background: #fff4f7;
+
+    border-radius: 7px;
+
+    padding: 7px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+
+/* FOTO DO MENTOR */
+
+.avatar {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* NOME DO MENTOR */
+
+.cartao-mentor strong {
+    color: var(--vinho);
+
+    font-size: 8px;
+}
+
+.cartao-mentor small {
+    color: var(--texto-suave);
+
+    font-size: 7px;
+}
+
+
+/* AVALIAÇÃO */
+
+.avaliacao {
+    color: #b37c27;
+
+    font-size: 6px;
+
+    margin: 4px 0 7px;
+}
+
+
+/* BOTÃO DO MENTOR */
+
+.cartao-mentor button {
+    background: var(--rosa);
+
+    color: white;
+
+    border-radius: 5px;
+
+    padding: 4px;
+
+    font-size: 6px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================
+   CONVERSA / APOIO
+========================================= */
+
+.conversa > p,
+.ajuda-rapida > p {
+    margin-bottom: 7px;
+}
+
+
+/* OPÇÃO DE APOIO */
+
+.opcao-suporte {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 16px 1fr 10px;
+
+    grid-template-rows: auto auto;
+
+    column-gap: 5px;
+
+    text-align: left;
+
+    padding: 7px;
+
+    margin-top: 5px;
+
+    border-radius: 6px;
+
+    background: #fde8ee;
+
+    color: var(--vinho);
+}
+
+.opcao-suporte span {
+    grid-row: 1 / 3;
+
+    align-self: center;
+
+    color: var(--rosa);
+
+    font-size: 13px;
+}
+
+.opcao-suporte b {
+    font-size: 7px;
+}
+
+.opcao-suporte small {
+    color: var(--texto-suave);
+
+    font-size: 6px;
+}
+
+.opcao-suporte i {
+    grid-column: 3;
+
+    grid-row: 1 / 3;
+
+    align-self: center;
+
+    color: var(--rosa);
+
+    font-style: normal;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   AJUDA RÁPIDA
+========================================= */
+
+.ajuda-rapida a {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 7px;
+
+    padding: 7px 0;
+
+    border-bottom: 1px solid #f1dfe5;
+
+    font-size: 7px;
+
+    line-height: 1.25;
+}
+
+.ajuda-rapida a span {
+    color: var(--rosa);
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   RECURSOS
+========================================= */
+
+.recursos {
+    margin-top: 13px;
+}
+
+.grade-recursos {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 9px;
+
+    margin-top: 11px;
+}
+
+
+/* CARTÃO DE RECURSO */
+
+.cartao-recurso {
+    overflow: hidden;
+
+    border-radius: 7px;
+
+    background: #fff4f7;
+
+    min-width: 0;
+}
+
+
+/* IMAGEM DOS RECURSOS */
+
+.imagem-recurso {
+    height: 64px;
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+/* 
+   AQUI VOCÊ TROCA AS FOTOS
+   DOS QUATRO CARTÕES
+*/
+
+.imagem-um {
+    background-image: url("/Love_Journey/img/casal1.png");
+    background-position: center;
+}
+
+.imagem-dois {
+    background-image: url("/Love_Journey/img/casal2.png");
+    background-position: center;
+}
+
+.imagem-tres {
+    background-image: url("/Love_Journey/img/casal3.png");
+    background-position: center;
+}
+
+.imagem-quatro {
+    background-image: url("/Love_Journey/img/casal4.png");
+    background-position: center;
+}
+
+
+/* TÍTULO DOS RECURSOS */
+
+.cartao-recurso h3 {
+    color: var(--vinho);
+
+    padding: 7px 7px 2px;
+
+    font-size: 8px;
+
+    line-height: 1.25;
+}
+
+.cartao-recurso span {
+    display: block;
+
+    padding: 0 7px 7px;
+
+    color: var(--rosa);
+
+    font-size: 6px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================
+   PARTE INFERIOR
+========================================= */
+
+.grade-inferior {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 13px;
+
+    margin-top: 13px;
+}
+
+
+/* RELACIONAMENTO SAUDÁVEL */
+
+.relacionamento-saudavel h2 {
+    font-size: 11px;
+}
+
+.relacionamento-saudavel p {
+    max-width: 700px;
+}
+
+
+/* =========================================
+   TAGS
+========================================= */
+
+.tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+
+    margin-top: 9px;
+}
+
+.tags span {
+    background: #f5e2ea;
+
+    color: var(--vinho);
+
+    padding: 4px 8px;
+
+    border-radius: 9px;
+
+    font-size: 6px;
+
+    font-weight: 700;
+}
+
+
+/* CORES DAS TAGS */
+
+.tags span:nth-child(2) {
+    background: #f9d6d9;
+}
+
+.tags span:nth-child(3) {
+    background: #e9dff0;
+}
+
+.tags span:nth-child(4) {
+    background: #ffe8b7;
+}
+
+.tags span:nth-child(5) {
+    background: #d9ece6;
+}
+
+.tags span:nth-child(6) {
+    background: #ead9e7;
+}
+
+
+/* =========================================
+   DICA
+========================================= */
+
+.dica {
+    background: var(--amarelo);
+
+    border-radius: 9px;
+
+    padding: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--vinho);
+}
+
+.icone-dica {
+    color: var(--rosa);
+
+    font-size: 27px;
+}
+
+.dica small {
+    display: block;
+
+    font-size: 7px;
+
+    color: #8a6730;
+}
+
+.dica strong {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 9px;
+
+    line-height: 1.25;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+/* TABLETS */
+
+@media (max-width: 1000px) {
+
+    .menu-lateral {
+        width: 190px;
+
+        flex-basis: 190px;
+    }
+
+    .conteudo-principal {
+        width: calc(100% - 190px);
+
+        padding: 24px;
+    }
+
+    .grade-superior {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .mentores {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* CELULARES */
+
+@media (max-width: 720px) {
+
+    .menu-lateral {
+        width: 74px;
+
+        flex-basis: 74px;
+
+        padding: 20px 9px;
+    }
+
+    .marca span,
+    .menu a:not(.ativo) span:last-child,
+    .menu a.ativo span:last-child,
+    .mensagem-menu {
+        display: none;
+    }
+
+    .marca {
+        justify-content: center;
+    }
+
+    .menu a {
+        justify-content: center;
+
+        padding: 10px 5px;
+    }
+
+    .conteudo-principal {
+        width: calc(100% - 74px);
+
+        padding: 18px;
+    }
+
+    .grade-superior,
+    .grade-inferior {
+        grid-template-columns: 1fr;
+    }
+
+    .mentores {
+        grid-column: auto;
+    }
+
+    .grade-recursos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* CELULARES PEQUENOS */
+
+@media (max-width: 500px) {
+
+    .cabecalho-pagina {
+        flex-direction: column;
+    }
+
+    .grade-mentores,
+    .grade-recursos {
+        grid-template-columns: 1fr 1fr;
+    }
+}

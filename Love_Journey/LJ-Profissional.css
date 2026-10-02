@@ -1,0 +1,442 @@
+
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+}
+
+.pagina {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+
+
+/* =========================================
+   MENU LATERAL
+========================================= */
+
+.menu-lateral {
+    width: 215px;
+    min-height: 100vh;
+
+    background-color: #f8e5e9;
+
+    padding: 28px 12px;
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    z-index: 10;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 35px;
+
+    padding-left: 5px;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+
+    object-fit: contain;
+}
+
+.logo span {
+    color: #ee91aa;
+
+    font-size: 19px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   MENU
+========================================= */
+
+.menu {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.menu a {
+    text-decoration: none;
+
+    color: #67405a;
+
+    font-size: 12px;
+
+    padding: 10px 12px;
+
+    border-radius: 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.menu a:hover {
+    background-color: #f2c7d2;
+}
+
+
+/* ITEM ATIVO */
+
+.menu-ativo {
+    background-color: #438879 !important;
+
+    color: white !important;
+}
+
+
+/* =========================================
+   MENSAGEM NO FINAL DO MENU
+========================================= */
+
+.logo-baixo {
+    position: absolute;
+
+    bottom: 20px;
+    left: 55px;
+
+    background-color: #f8aeca;
+
+    color: white;
+
+    padding: 12px 22px;
+
+    border-radius: 13px 13px 0 0;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   CONTEÚDO PRINCIPAL
+========================================= */
+
+.conteudo {
+    margin-left: 215px;
+
+    width: calc(100% - 215px);
+
+    min-height: 100vh;
+
+    /*
+       FUNDO DA PÁGINA
+
+       Caso queira trocar o fundo,
+       altere apenas o nome da imagem abaixo.
+    */
+
+    background-image:
+        linear-gradient(
+            rgba(20, 50, 45, 0.25),
+            rgba(20, 50, 45, 0.25)
+        ),
+        url("/Love_Journey/img/Fundo2.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    padding: 25px 32px;
+}
+
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.cabecalho {
+    margin-bottom: 18px;
+}
+
+.titulo-perfil {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: white;
+}
+
+
+/* ÍCONE DO PERFIL */
+
+.icone-perfil {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    background-color: #e998b4;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 19px;
+}
+
+.titulo-perfil h1 {
+    font-size: 15px;
+
+    margin-bottom: 4px;
+}
+
+.titulo-perfil p {
+    font-size: 8px;
+
+    max-width: 510px;
+}
+
+
+/* =========================================
+   ÁREA DOS CARDS
+========================================= */
+
+.area-cards {
+    display: grid;
+
+    grid-template-columns:
+        minmax(500px, 1fr)
+        185px;
+
+    gap: 30px;
+
+    max-width: 900px;
+
+    margin: auto;
+}
+
+
+/* COLUNA ESQUERDA */
+
+.coluna-esquerda {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.card {
+    background-color: rgba(255, 255, 255, 0.96);
+
+    border-radius: 7px;
+
+    padding: 13px;
+
+    position: relative;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.card h2 {
+    color: #60344f;
+
+    font-size: 10px;
+}
+
+.card p {
+    color: #675363;
+
+    font-size: 8px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   PERFIL
+========================================= */
+
+.cartao-perfil {
+    display: flex;
+
+    gap: 12px;
+
+    padding: 12px;
+}
+
+
+/* FOTO DE PERFIL */
+
+.foto-perfil {
+    position: relative;
+
+    flex-shrink: 0;
+}
+
+.foto-perfil img {
+    width: 62px;
+    height: 62px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+
+/* STATUS ONLINE */
+
+.online {
+    position: absolute;
+
+    right: 0;
+    bottom: 3px;
+
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+
+    background-color: #65b38a;
+
+    color: white;
+
+    font-size: 9px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================
+   INFORMAÇÕES DO PERFIL
+========================================= */
+
+.informacoes {
+    padding-right: 20px;
+}
+
+.informacoes h2 {
+    font-size: 10px;
+
+    margin-bottom: 3px;
+}
+
+.informacoes h3 {
+    color: #7b4869;
+
+    font-size: 7px;
+
+    margin-bottom: 7px;
+}
+
+.informacoes p {
+    font-size: 7px;
+}
+
+
+/* LOCALIZAÇÃO */
+
+.local {
+    margin-top: 6px;
+}
+
+
+/* BOTÃO DO PERFIL */
+
+.informacoes button {
+    border: none;
+
+    background-color: #f6c5d8;
+
+    color: #884b6b;
+
+    width: 100%;
+
+    padding: 5px;
+
+    margin-top: 7px;
+
+    border-radius: 4px;
+
+    font-size: 7px;
+
+    text-align: left;
+}
+
+
+/* BOTÃO EDITAR */
+
+.editar {
+    position: absolute;
+
+    right: 12px;
+    top: 12px;
+
+    color: #85506d;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   TÍTULOS DOS CARDS
+========================================= */
+
+.titulo-card {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 6px;
+}
+
+.titulo-card span {
+    color: #82506c;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   TAGS
+=========================
+
